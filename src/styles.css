@@ -1,0 +1,116 @@
+/* ===== Reset + Layout ===== */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center */
+  background: #2c2c2c;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+/* ===== App wrapper ===== */
+.app {
+  width: 360px;              /* fixed width column */
+}
+
+/* ===== Form ===== */
+.new-item-form { margin-bottom: 20px; }
+.form-row { display: flex; flex-direction: column; gap: 8px; }
+
+.new-item-form label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.new-item-form input[type="text"] {
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 6px;
+  border: 1px solid #5aa7cf;
+  background: #0a71a8;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+.new-item-form input[type="text"]::placeholder { color: #d7e4ef; }
+
+.btn {
+  width: 100%;
+  margin-top: 6px;
+  padding: 9px 10px;
+  border-radius: 6px;
+  border: 1px solid #5aa7cf;
+  background: #0a71a8;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn:hover { filter: brightness(1.1); }
+
+/* ===== Header ===== */
+.header {
+  margin: 12px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ===== Todo List ===== */
+.list { list-style: none; padding: 0; margin: 0; }
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.list label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  cursor: pointer;
+  color: #fff;                /* default white */
+}
+
+/* change label text when checked */
+.list label:has(input[type="checkbox"]:checked) {
+  color: #9fd0ff;             /* light blue when done */
+}
+
+/* custom checkbox */
+.list input[type="checkbox"] {
+  appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 4px;
+  background: #cbe7ff;
+  border: 2px solid #9cccf2;
+  display: grid;
+  place-items: center;
+}
+.list input[type="checkbox"]:checked {
+  background: #1f7fbe;
+  border-color: #17679b;
+}
+.list input[type="checkbox"]:checked::after {
+  content: "";
+  width: 9px; height: 9px;
+  background: #fff;
+  clip-path: polygon(14% 46%, 0 63%, 40% 100%, 100% 28%, 84% 14%, 39% 70%);
+}
+
+/* ===== Delete button ===== */
+.btn-danger {
+  background: rgba(139, 0, 0, 0.18);
+  border: 2px solid #8b0000;
+  color: #d43c3c;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn-danger:hover { background: rgba(139, 0, 0, 0.26); }
